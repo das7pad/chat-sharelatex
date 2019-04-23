@@ -1,7 +1,7 @@
 # This file was auto-generated, do not edit it directly.
 # Instead run bin/update_build_scripts from
-# https://github.com/sharelatex/sharelatex-dev-environment
-# Version: 1.1.16
+# https://github.com/das7pad/sharelatex-dev-env
+# Version: 1.1.17
 
 BUILD_NUMBER ?= local
 BRANCH_NAME ?= $(shell git rev-parse --abbrev-ref HEAD)

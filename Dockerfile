@@ -13,9 +13,11 @@ COPY . /app
 
 FROM node:6.14.1
 
-COPY --from=app /app /app
-
 WORKDIR /app
-USER node
 
 CMD ["node", "--expose-gc", "app.js"]
+
+
+COPY --from=app /app /app
+
+USER node
