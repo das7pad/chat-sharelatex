@@ -13,9 +13,10 @@ COPY . /app
 
 FROM node:10.15.3
 
+CMD ["node", "--expose-gc", "app.js"]
+
 WORKDIR /app
 
-CMD ["node", "--expose-gc", "app.js"]
 
 
 COPY --from=app /app /app
