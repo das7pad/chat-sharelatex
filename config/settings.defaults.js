@@ -22,9 +22,9 @@ module.exports = {
 
   redis: {
     web: {
-      host: process.env['REDIS_HOST'] || 'localhost',
-      port: '6379',
-      password: process.env['REDIS_PASSWORD'] || ''
+      host: process.env['WEB_REDIS_HOST'] || process.env['REDIS_HOST'] || 'localhost',
+      port: process.env['WEB_REDIS_PORT'] || process.env['REDIS_PORT'] || '6379',
+      password: process.env['WEB_REDIS_PASSWORD'] || process.env['REDIS_PASSWORD'] || ''
     }
   }
 }
