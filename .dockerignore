@@ -1,7 +1,55 @@
-node_modules/*
-gitrev
-.git
-.gitignore
-.npm
-.nvmrc
-nodemon.json
+# This file was auto-generated, do not edit it directly.
+# Instead run bin/update_build_scripts from
+# https://github.com/das7pad/sharelatex-dev-env
+
+# ignore everything but our whitelist
+*
+
+!/LICENSE
+
+########
+# core #
+!/npm-shrinkwrap.json
+!/package.json
+# core #
+########
+
+########
+# make #
+!/Makefile
+# make #
+########
+
+###########
+# scripts #
+# scripts #
+###########
+
+###############
+# tool config #
+!/.eslintrc
+
+!/.prettierrc
+# tool config #
+###############
+
+##############
+# app config #
+!/config/settings.defaults.js
+# app config #
+##############
+
+#######
+# app #
+!/app.js
+!/app
+
+!/test/acceptance/config
+!/test/acceptance/fixtures
+!/test/acceptance/js
+!/test/acceptance/libs
+!/test/fixtures
+!/test/smoke/js
+!/test/unit/js
+# app #
+#######
