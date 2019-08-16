@@ -16,7 +16,6 @@ DOCKER_COMPOSE := BUILD_NUMBER=$(BUILD_NUMBER) \
 
 clean:
 	docker rmi \
-		node:10.16.0 \
 		ci/$(PROJECT_NAME):$(BRANCH_NAME)-$(BUILD_NUMBER) \
 		ci/$(PROJECT_NAME):$(BRANCH_NAME)-$(BUILD_NUMBER)-cache \
 		ci/$(PROJECT_NAME):$(BRANCH_NAME)-$(BUILD_NUMBER)-build \
@@ -24,7 +23,7 @@ clean:
 		gcr.io/overleaf-ops/$(PROJECT_NAME):$(BRANCH_NAME)-$(BUILD_NUMBER) \
 		--force
 lint:
-	$(DOCKER_COMPOSE) run --rm test_unit npm run lint
+	$(DOCKER_COMPOSE) run --rm test_unit npx eslint .
 
 test: lint test_unit test_acceptance
 
@@ -47,7 +46,6 @@ test_acceptance_pre_run:
 build_app:
 
 build:
-	docker pull node:10.16.0
 	docker build --tag ci/$(PROJECT_NAME):$(BRANCH_NAME)-$(BUILD_NUMBER)-build \
 		--cache-from ci/$(PROJECT_NAME):$(BRANCH_NAME)-$(BUILD_NUMBER)-build-cache \
 		--target app \
