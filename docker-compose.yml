@@ -31,8 +31,6 @@ services:
       - redis_web
     command: npm run test:acceptance
 
-
-
   tar:
     build: .
     image: ci/$PROJECT_NAME:$BRANCH_NAME-$BUILD_NUMBER
@@ -46,4 +44,3 @@ services:
 
   mongo:
     image: mongo:3.4
-
