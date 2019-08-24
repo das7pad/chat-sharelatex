@@ -1,4 +1,8 @@
 module.exports = {
+  sentry: {
+    dsn: process.env['SENTRY_DSN']
+  },
+
   internal: {
     chat: {
       host: process.env['LISTEN_ADDRESS'] || 'localhost',
