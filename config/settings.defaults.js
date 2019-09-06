@@ -21,7 +21,9 @@ module.exports = {
   },
 
   mongo: {
-    url: process.env['MONGO_CONNECTION_STRING'] || `mongodb://${process.env['MONGO_HOST'] || 'localhost'}/sharelatex`
+    url:
+      process.env['MONGO_CONNECTION_STRING'] ||
+      `mongodb://${process.env['MONGO_HOST'] || 'localhost'}/sharelatex`
   },
 
   redis: {
