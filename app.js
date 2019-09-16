@@ -9,7 +9,7 @@ const logger = require('logger-sharelatex')
 const settings = require('settings-sharelatex')
 
 if (settings.sentry != null && settings.sentry.dsn) {
-  logger.initializeErrorReporting(settings.sentry.dsn)
+  logger.initializeErrorReporting(settings.sentry.dsn, settings.sentry.options)
 }
 
 const Server = require('./app/js/server')
