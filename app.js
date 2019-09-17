@@ -12,6 +12,13 @@ if (settings.sentry != null && settings.sentry.dsn) {
   logger.initializeErrorReporting(settings.sentry.dsn, settings.sentry.options)
 }
 
+if (settings.catchErrors != null) {
+  process.removeAllListeners("uncaughtException");
+  process.on("uncaughtException", function(error) {
+    logger.error({err: error}, "uncaughtException");
+  });
+}
+
 const Server = require('./app/js/server')
 
 if (!module.parent) {
