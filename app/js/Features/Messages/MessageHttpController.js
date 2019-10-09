@@ -81,7 +81,7 @@ module.exports = MessageHttpController = {
       if (error != null) {
         return next(error)
       }
-      return res.send(204)
+      return res.sendStatus(204)
     })
   }, // No content
 
@@ -92,7 +92,7 @@ module.exports = MessageHttpController = {
       if (error != null) {
         return next(error)
       }
-      return res.send(204)
+      return res.sendStatus(204)
     })
   }, // No content
 
@@ -110,7 +110,7 @@ module.exports = MessageHttpController = {
         if (error != null) {
           return next(error)
         }
-        return res.send(204)
+        return res.sendStatus(204)
       })
     })
   }, // No content
@@ -138,7 +138,7 @@ module.exports = MessageHttpController = {
           if (error != null) {
             return next(error)
           }
-          return res.send(204)
+          return res.sendStatus(204)
         }
       )
     })
@@ -161,7 +161,7 @@ module.exports = MessageHttpController = {
         if (error != null) {
           return next(error)
         }
-        return res.send(204)
+        return res.sendStatus(204)
       })
     })
   },
