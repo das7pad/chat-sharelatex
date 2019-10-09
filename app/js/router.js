@@ -61,7 +61,7 @@ module.exports = Router = {
       '/project/:project_id/thread/:thread_id/messages/:message_id/edit',
       MessageHttpController.editMessage
     )
-    app.del(
+    app.delete(
       '/project/:project_id/thread/:thread_id/messages/:message_id',
       MessageHttpController.deleteMessage
     )
@@ -74,7 +74,7 @@ module.exports = Router = {
       '/project/:project_id/thread/:thread_id/reopen',
       MessageHttpController.reopenThread
     )
-    app.del(
+    app.delete(
       '/project/:project_id/thread/:thread_id',
       MessageHttpController.deleteThread
     )
