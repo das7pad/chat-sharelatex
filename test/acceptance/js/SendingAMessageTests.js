@@ -173,7 +173,7 @@ describe('Sending a message', function() {
 
     return describe('with very long content', () =>
       it('should return a graceful error', function(done) {
-        const content = new Buffer(10240).toString('hex')
+        const content = Buffer.alloc(10240).toString('hex')
         return ChatClient.sendMessage(
           this.project_id,
           this.thread_id,
