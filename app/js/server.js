@@ -12,7 +12,6 @@ const metrics = require('metrics-sharelatex')
 metrics.initialize('chat')
 const logger = require('logger-sharelatex')
 logger.initialize('chat')
-const Path = require('path')
 const express = require('express')
 const bodyParser = require("body-parser")
 

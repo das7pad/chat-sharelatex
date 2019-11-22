@@ -12,7 +12,6 @@
  */
 const { ObjectId } = require('../../../app/js/mongojs')
 const { expect } = require('chai')
-const crypto = require('crypto')
 
 const ChatClient = require('./helpers/ChatClient')
 const ChatApp = require('./helpers/ChatApp')

@@ -13,7 +13,6 @@
  */
 let MessageHttpController
 const logger = require('logger-sharelatex')
-const metrics = require('metrics-sharelatex')
 const MessageManager = require('./MessageManager')
 const MessageFormatter = require('./MessageFormatter')
 const ThreadManager = require('../Threads/ThreadManager')
