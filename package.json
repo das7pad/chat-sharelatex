@@ -25,7 +25,6 @@
     "logger-sharelatex": "git+https://github.com/das7pad/logger-sharelatex.git#c9e043041b1f6a4c76ce36a3642cef64483e99f3",
     "metrics-sharelatex": "git+https://github.com/das7pad/metrics-sharelatex.git#866a23f83fcc3e812a70b4b4a88d445323e66988",
     "mongojs": "2.4.0",
-    "request": "^2.79.0",
     "settings-sharelatex": "^1.1.0"
   },
   "devDependencies": {
@@ -44,6 +43,7 @@
     "eslint-plugin-standard": "^4.0.0",
     "mocha": "^4.1.0",
     "prettier-eslint-cli": "^4.7.1",
+    "request": "^2.79.0",
     "sandboxed-module": "^2.0.3",
     "sinon": "^7.4.2",
     "timekeeper": "^2.2.0"
