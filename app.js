@@ -13,10 +13,10 @@ if (settings.sentry != null && settings.sentry.dsn) {
 }
 
 if (settings.catchErrors != null) {
-  process.removeAllListeners("uncaughtException");
-  process.on("uncaughtException", function(error) {
-    logger.error({err: error}, "uncaughtException");
-  });
+  process.removeAllListeners('uncaughtException')
+  process.on('uncaughtException', function(error) {
+    logger.error({ err: error }, 'uncaughtException')
+  })
 }
 
 const Server = require('./app/js/server')

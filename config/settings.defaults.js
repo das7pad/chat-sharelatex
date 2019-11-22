@@ -16,6 +16,5 @@ module.exports = {
       `mongodb://${process.env['MONGO_HOST'] || 'localhost'}/sharelatex`
   },
 
-  redis: {
-  }
+  redis: {}
 }

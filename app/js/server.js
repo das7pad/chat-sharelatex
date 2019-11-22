@@ -13,7 +13,7 @@ metrics.initialize('chat')
 const logger = require('logger-sharelatex')
 logger.initialize('chat')
 const express = require('express')
-const bodyParser = require("body-parser")
+const bodyParser = require('body-parser')
 
 const app = express()
 const server = require('http').createServer(app)
