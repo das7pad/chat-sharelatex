@@ -16,7 +16,6 @@ let MessageManager
 const mongojs = require('../../mongojs')
 const { db } = mongojs
 const { ObjectId } = mongojs
-const async = require('async')
 const metrics = require('metrics-sharelatex')
 const logger = require('logger-sharelatex')
 
