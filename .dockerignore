@@ -54,3 +54,9 @@
 !/test/unit/js
 # app #
 #######
+
+###################
+# build artifacts #
+!/build_artifacts.tar.gz
+# build artifacts #
+###################
