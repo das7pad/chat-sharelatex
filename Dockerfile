@@ -12,12 +12,12 @@ COPY docker_cleanup.sh /
 
 COPY package.json package-lock.json /app/
 
-FROM base AS dev
+FROM base AS dev-deps
 
 RUN /docker_cleanup.sh npm ci
 
-COPY . /app
+FROM dev-deps as dev
 
-RUN /docker_cleanup.sh make build_app
+COPY . /app
 
 USER node
