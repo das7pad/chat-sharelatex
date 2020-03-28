@@ -19,7 +19,8 @@ const app = express()
 const server = require('http').createServer(app)
 const Router = require('./router')
 
-app.use(bodyParser())
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({ extended: true }))
 app.use(metrics.http.monitor(logger))
 metrics.injectMetricsRoute(app)
 
