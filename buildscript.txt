@@ -2,5 +2,4 @@ chat
 --language=es
 --node-version=12.16.1
 --dependencies=mongo,
---docker-repos=gcr.io/overleaf-ops
 --lint-runner-version=1.0.0
