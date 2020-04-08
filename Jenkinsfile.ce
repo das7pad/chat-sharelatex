@@ -103,7 +103,7 @@ pipeline {
             label 'sharelatex'
           }
           environment {
-            SUFFIX = 'test-acceptance'
+            SUFFIX = '-test-acceptance'
           }
           steps {
             sh 'make prepare_ci_stage'
