@@ -160,7 +160,7 @@ module.exports = MessageHttpController = {
         if (error != null) {
           return next(error)
         }
-        return res.status(204).send()
+        return res.sendStatus(204)
       })
     })
   },
