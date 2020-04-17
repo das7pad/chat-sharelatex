@@ -46,3 +46,4 @@ services:
 
   mongo:
     image: mongo
+    tmpfs: /data
