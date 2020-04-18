@@ -2,4 +2,4 @@ chat
 --language=es
 --node-version=12.16.1
 --dependencies=mongo,
---lint-runner-version=1.0.0
+--lint-runner-version=1.0.1
