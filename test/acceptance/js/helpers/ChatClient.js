@@ -10,7 +10,7 @@
  * Full docs: https://github.com/decaffeinate/decaffeinate/blob/master/docs/suggestions.md
  */
 const request = require('request').defaults({
-  baseUrl: 'http://localhost:3010'
+  baseUrl: `http://${process.env.HTTP_TEST_HOST || 'localhost'}:3010`
 })
 
 module.exports = {
