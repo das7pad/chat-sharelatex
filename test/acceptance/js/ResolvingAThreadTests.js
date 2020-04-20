@@ -16,15 +16,15 @@ const { expect } = require('chai')
 const ChatClient = require('./helpers/ChatClient')
 const ChatApp = require('./helpers/ChatApp')
 
-describe('Resolving a thread', function() {
-  before(function(done) {
+describe('Resolving a thread', function () {
+  before(function (done) {
     this.project_id = ObjectId().toString()
     this.user_id = ObjectId().toString()
     return ChatApp.ensureRunning(done)
   })
 
-  describe('with a resolved thread', function() {
-    before(function(done) {
+  describe('with a resolved thread', function () {
+    before(function (done) {
       this.thread_id = ObjectId().toString()
       this.content = 'resolved message'
       return ChatClient.sendMessage(
@@ -49,7 +49,7 @@ describe('Resolving a thread', function() {
       )
     })
 
-    return it('should then list the thread as resolved', function(done) {
+    return it('should then list the thread as resolved', function (done) {
       return ChatClient.getThreads(
         this.project_id,
         (error, response, threads) => {
@@ -67,8 +67,8 @@ describe('Resolving a thread', function() {
     })
   })
 
-  describe('when a thread is not resolved', function() {
-    before(function(done) {
+  describe('when a thread is not resolved', function () {
+    before(function (done) {
       this.thread_id = ObjectId().toString()
       this.content = 'open message'
       return ChatClient.sendMessage(
@@ -84,7 +84,7 @@ describe('Resolving a thread', function() {
       )
     })
 
-    return it('should not list the thread as resolved', function(done) {
+    return it('should not list the thread as resolved', function (done) {
       return ChatClient.getThreads(
         this.project_id,
         (error, response, threads) => {
@@ -97,8 +97,8 @@ describe('Resolving a thread', function() {
     })
   })
 
-  return describe('when a thread is resolved then reopened', function() {
-    before(function(done) {
+  return describe('when a thread is resolved then reopened', function () {
+    before(function (done) {
       this.thread_id = ObjectId().toString()
       this.content = 'resolved message'
       return ChatClient.sendMessage(
@@ -131,7 +131,7 @@ describe('Resolving a thread', function() {
       )
     })
 
-    return it('should not list the thread as resolved', function(done) {
+    return it('should not list the thread as resolved', function (done) {
       return ChatClient.getThreads(
         this.project_id,
         (error, response, threads) => {

@@ -19,7 +19,7 @@ module.exports = {
   callbacks: [],
   ensureRunning(callback) {
     if (callback == null) {
-      callback = function(error) {}
+      callback = function (error) {}
     }
     if (this.running) {
       return callback()
@@ -28,7 +28,7 @@ module.exports = {
     } else {
       this.initing = true
       this.callbacks.push(callback)
-      return app.listen(3010, 'localhost', error => {
+      return app.listen(3010, 'localhost', (error) => {
         if (error != null) {
           throw error
         }

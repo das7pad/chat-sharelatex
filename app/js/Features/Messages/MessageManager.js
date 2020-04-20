@@ -22,7 +22,7 @@ const logger = require('logger-sharelatex')
 module.exports = MessageManager = {
   createMessage(room_id, user_id, content, timestamp, callback) {
     if (callback == null) {
-      callback = function(error, message) {}
+      callback = function (error, message) {}
     }
     let newMessageOpts = {
       content,
@@ -36,23 +36,20 @@ module.exports = MessageManager = {
 
   getMessages(room_id, limit, before, callback) {
     if (callback == null) {
-      callback = function(error, messages) {}
+      callback = function (error, messages) {}
     }
     let query = { room_id }
     if (before != null) {
       query.timestamp = { $lt: before }
     }
     query = this._ensureIdsAreObjectIds(query)
-    const cursor = db.messages
-      .find(query)
-      .sort({ timestamp: -1 })
-      .limit(limit)
+    const cursor = db.messages.find(query).sort({ timestamp: -1 }).limit(limit)
     return cursor.toArray(callback)
   },
 
   findAllMessagesInRooms(room_ids, callback) {
     if (callback == null) {
-      callback = function(error, messages) {}
+      callback = function (error, messages) {}
     }
     return db.messages.find(
       {
@@ -64,7 +61,7 @@ module.exports = MessageManager = {
 
   deleteAllMessagesInRoom(room_id, callback) {
     if (callback == null) {
-      callback = function(error) {}
+      callback = function (error) {}
     }
     return db.messages.remove(
       {
@@ -76,7 +73,7 @@ module.exports = MessageManager = {
 
   updateMessage(room_id, message_id, content, timestamp, callback) {
     if (callback == null) {
-      callback = function(error, message) {}
+      callback = function (error, message) {}
     }
     const query = this._ensureIdsAreObjectIds({
       _id: message_id,
@@ -90,7 +87,7 @@ module.exports = MessageManager = {
           edited_at: timestamp
         }
       },
-      function(error) {
+      function (error) {
         if (error != null) {
           return callback(error)
         }
@@ -101,13 +98,13 @@ module.exports = MessageManager = {
 
   deleteMessage(room_id, message_id, callback) {
     if (callback == null) {
-      callback = function(error) {}
+      callback = function (error) {}
     }
     const query = this._ensureIdsAreObjectIds({
       _id: message_id,
       room_id
     })
-    return db.messages.remove(query, function(error) {
+    return db.messages.remove(query, function (error) {
       if (error != null) {
         return callback(error)
       }
@@ -134,7 +131,7 @@ module.exports = MessageManager = {
   'findAllMessagesInRooms',
   'updateMessage',
   'deleteMessage'
-].map(method =>
+].map((method) =>
   metrics.timeAsyncMethod(
     MessageManager,
     method,
