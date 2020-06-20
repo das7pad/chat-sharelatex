@@ -162,6 +162,7 @@ test_acceptance_app: test_acceptance_app_run
 
 test_acceptance_app_run:
 	$(ACCEPTANCE_TEST_DOCKER_COMPOSE) run --rm test_acceptance
+	$(MAKE) clean_test_acceptance_app
 
 test_acceptance_app_run: test_acceptance_pre_run
 test_acceptance_pre_run:
