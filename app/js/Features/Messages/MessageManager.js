@@ -16,7 +16,7 @@ let MessageManager
 const mongojs = require('../../mongojs')
 const { db } = mongojs
 const { ObjectId } = mongojs
-const metrics = require('metrics-sharelatex')
+const metrics = require('@overleaf/metrics')
 const logger = require('logger-sharelatex')
 
 module.exports = MessageManager = {

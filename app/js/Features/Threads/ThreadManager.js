@@ -16,7 +16,7 @@ const mongojs = require('../../mongojs')
 const { db } = mongojs
 const { ObjectId } = mongojs
 const logger = require('logger-sharelatex')
-const metrics = require('metrics-sharelatex')
+const metrics = require('@overleaf/metrics')
 
 module.exports = ThreadManager = {
   GLOBAL_THREAD: 'GLOBAL',
