@@ -11,7 +11,7 @@
  * DS102: Remove unnecessary code created because of implicit returns
  * Full docs: https://github.com/decaffeinate/decaffeinate/blob/master/docs/suggestions.md
  */
-const { ObjectId } = require('../../../app/js/mongojs')
+const { ObjectId } = require('../../../app/js/mongodb')
 const { expect } = require('chai')
 
 const ChatClient = require('./helpers/ChatClient')
@@ -179,7 +179,7 @@ describe('Sending a message', function () {
 
     return describe('with very long content', function () {
       return it('should return a graceful error', function (done) {
-        const content = Buffer.alloc(10240).toString('hex')
+        const content = '-'.repeat(10 * 1024 + 1)
         return ChatClient.sendMessage(
           this.project_id,
           this.thread_id,

@@ -16,7 +16,7 @@ const logger = require('logger-sharelatex')
 const MessageManager = require('./MessageManager')
 const MessageFormatter = require('./MessageFormatter')
 const ThreadManager = require('../Threads/ThreadManager')
-const { ObjectId } = require('../../mongojs')
+const { ObjectId } = require('../../mongodb')
 
 module.exports = MessageHttpController = {
   DEFAULT_MESSAGE_LIMIT: 50,
